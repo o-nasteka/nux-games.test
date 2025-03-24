@@ -1,24 +1,42 @@
-FROM php:8.0-fpm
+FROM php:8.2-fpm
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
-    unzip \
-    libzip-dev \
+    curl \
     zip \
-    libsqlite3-dev \
+    unzip \
+    libpng-dev \
+    libonig-dev \
     libxml2-dev \
-    libssl-dev \
-    curl
+    libzip-dev \
+    libicu-dev \
+    supervisor \
+    gnupg
 
-# Install PHP extensions
-RUN docker-php-ext-install pdo_sqlite zip bcmath ctype fileinfo json mbstring openssl tokenizer xml
+# Install Node.js 18.x and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs
 
-# Install Node.js and npm
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs
+# Install PHP extensions required by Laravel 12
+RUN docker-php-ext-install \
+    pdo_mysql \
+    mbstring \
+    exif \
+    pcntl \
+    bcmath \
+    gd \
+    zip \
+    intl
+
+# Clear apt cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Set working directory
 WORKDIR /var/www
+
+# Default command (overridden in php-worker)
+CMD ["php-fpm"]

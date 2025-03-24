@@ -1,4 +1,4 @@
-# nux-games.com
+# nux-games.test
 
 ## Requirements
 
@@ -9,8 +9,8 @@
 ## Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/o-nasteka/nux-games.com.git
-cd nux-games.com
+git clone https://github.com/o-nasteka/nux-games.test.git
+cd nux-games.test
 ```
 
 ## Step 2: Configure .env files
@@ -21,19 +21,17 @@ cd nux-games.com
 cp .env.example .env
 ```
 
-The database is set to SQLite by default. No additional database configuration is needed.
-
 ## Step 3: Build and Run Docker containers
 
 ```bash
 cd docker
-docker-compose up -d --build
+docker compose up -d --build
 ```
 
 ## Step 4: Set up Laravel
 
 ```bash
-docker-compose exec app bash
+docker compose exec app bash
 ```
 
 Then, inside the container, run the following command:
