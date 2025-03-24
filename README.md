@@ -27,7 +27,7 @@ The database is set to SQLite by default. No additional database configuration i
 
 ```bash
 cd docker
-docker-compose up -d
+docker-compose up -d --build
 ```
 
 ## Step 4: Set up Laravel
