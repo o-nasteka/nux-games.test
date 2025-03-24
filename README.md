@@ -1,5 +1,10 @@
 # nux-games.test
 
+## Preview
+
+![App screenshot](screenshot.png)
+
+
 ## Requirements
 
 - Docker
