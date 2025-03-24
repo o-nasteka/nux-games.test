@@ -1,12 +1,11 @@
-version: '3.8'
-
 services:
     app:
-        image: php:8.0-fpm
+        build:
+            context: ./app
         container_name: app
         working_dir: /var/www
         volumes:
-            - ../nux-games.test:/var/www
+            - ../nux-games.com:/var/www
         networks:
             - app-network
 
