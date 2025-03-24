@@ -36,40 +36,18 @@ docker-compose up -d
 docker-compose exec app bash
 ```
 
-Then, inside the container, run the following commands:
+Then, inside the container, run the following command:
 
 ```bash
-cd /var/www
-composer install
-php artisan key:generate
-php artisan migrate
-php artisan storage:link
-npm install
-npm run build
+composer install &&
+php artisan key:generate &&
+php artisan migrate &&
+php artisan storage:link &&
+npm install &&
+npm run build &&
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 ```
 
 ## Step 5: Access the application
 
 Open [http://localhost](http://localhost) in your browser.
-
-## Step 6: Troubleshooting
-
-If something went wrong, use these commands:
-
-```bash
-docker-compose exec app bash
-```
-
-Then, inside the container, run the following commands:
-
-```bash
-cd /var/www
-composer install
-php artisan key:generate
-php artisan migrate
-php artisan storage:link
-npm install
-npm run build
-chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
-```
