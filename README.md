@@ -1,4 +1,4 @@
-# nux-games.com
+# nux-games.test
 
 ## Requirements
 
@@ -9,8 +9,8 @@
 ## Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/o-nasteka/nux-games.com.git
-cd nux-games.com
+git clone https://github.com/o-nasteka/nux-games.test.git
+cd nux-games.test
 ```
 
 ## Step 2: Configure .env files
