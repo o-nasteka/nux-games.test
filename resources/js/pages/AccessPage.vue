@@ -20,10 +20,10 @@
 
 <script setup>
 import { defineProps } from "vue";
-import UserInfo from "@/Components/UserInfo.vue";
-import AccessActions from "@/Components/AccessActions.vue";
-import LuckyGame from "@/Components/LuckyGame.vue";
-import History from "@/Components/History.vue";
+import UserInfo from "@/components/UserInfo.vue";
+import AccessActions from "@/components/AccessActions.vue";
+import LuckyGame from "@/components/LuckyGame.vue";
+import History from "@/components/History.vue";
 
 const props = defineProps(["username", "phone", "access_url"]);
 </script>
