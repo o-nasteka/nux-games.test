@@ -6,7 +6,7 @@ services:
         container_name: app
         working_dir: /var/www
         volumes:
-            - ../nux-games.com:/var/www
+            - ../nux-games.test:/var/www
         networks:
             - app-network
 
