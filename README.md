@@ -59,20 +59,9 @@ docker compose up -d --build
 docker compose exec app bash
 ```
 
-Inside the container, run:
-
-```bash
-composer install &&
-php artisan key:generate &&
-php artisan migrate &&
-php artisan storage:link &&
-npm install &&
-npm run build 
-```
-
 ---
 
-## Step 5: Access the application
+## Step 4: Access the application
 
 Open [http://localhost](http://localhost) in your browser.
 
