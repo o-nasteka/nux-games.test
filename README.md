@@ -48,12 +48,12 @@ cp docker/.env.example docker/.env
 
 ```bash
 cd docker
-docker compose up -d --build
+docker compose up --build
 ```
 
 ---
 
-## Step 4: Set up Laravel
+## Step 4: Access to container with Laravel
 
 ```bash
 docker compose exec app bash
@@ -61,7 +61,7 @@ docker compose exec app bash
 
 ---
 
-## Step 4: Access the application
+## Step 5: Access the application
 
 Open [http://localhost](http://localhost) in your browser.
 
