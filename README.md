@@ -51,6 +51,9 @@ cp docker/.env.example docker/.env
 
 ```bash
 cd docker
+```
+
+```bash
 docker compose up --build
 ```
 
