@@ -4,7 +4,6 @@
 
 ![App screenshot](screenshot.png)
 
-
 ## Requirements
 
 - Docker
@@ -80,4 +79,41 @@ Open [http://localhost](http://localhost) in your browser.
 
 ---
 
+## Troubleshooting
+
+### SQLite: "attempt to write a readonly database"
+
+If you see the error:
+
+```
+SQLSTATE[HY000]: General error: 8 attempt to write a readonly database
+```
+
+This means Laravel inside the container does not have write access to the SQLite database file.
+
+#### Solution:
+
+1. From your host machine, run:
+
+```bash
+chmod 777 database/database.sqlite
+chmod -R 777 database/
+```
+
+2. If the file does not exist, create it:
+
+```bash
+touch database/database.sqlite
+chmod 777 database/database.sqlite
+```
+
+3. Alternatively, inside the container:
+
+```bash
+docker compose exec app bash
+chown -R www-data:www-data /var/www/database
+chmod -R 777 /var/www/database
+```
+
+After this, refresh the page in your browser — the error should be gone.
 
