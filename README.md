@@ -16,6 +16,9 @@
 
 ```bash
 git clone https://github.com/o-nasteka/nux-games.test.git
+```
+
+```bash
 cd nux-games.test
 ```
 
